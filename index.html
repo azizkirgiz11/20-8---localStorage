@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <input type="text" id="text" placeholder="your text">
+  <button id="savebtn" onclick="saveName()">Сактоо</button>
+  <button id="showbtn" onclick="showName()">Чыгаруу</button>
+  <h3 id="output"></h3>
+
+  <script>
+    function saveName() {
+        let text = document.getElementById("text").value;
+        localStorage.setItem("text", text);
+        alert("Malimat saktaldi");
+    }
+
+    function showName() {
+        let savetext = localStorage.getItem("text");
+        let h3 = document.getElementById("output");
+        h3.textContent = "Сакталган ат: " + savetext;
+    }
+  </script>
+</body>
+</html>
